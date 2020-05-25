@@ -1,3 +1,5 @@
 require_relative '../config/environment'
 
-puts "hello world"
+system("clear")
+
+interface = Interface.new

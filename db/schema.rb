@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_224649) do
   create_table "links", force: :cascade do |t|
     t.string "url"
     t.string "title"
-    t.string "category"
+    t.string "category" 
     t.string "short_desc"
   end
 
