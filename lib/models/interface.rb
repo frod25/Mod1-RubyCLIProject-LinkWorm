@@ -11,27 +11,25 @@ class Interface
         puts "Hello, this is our app"
     end
 
-    def quit
+    def self.quit
+        sleep(0.5)
+        system("clear")
         puts "Thanks for using our app, hope to see you again"
         system('exit')
     end
 
     def login_or_register
-        selection = @@prompt.select("Would you like to login or register?", ["Login", "Register", "Quit"])
-        
-        if selection == "Login"
-            self.login
-        elsif selection == "Register"
-            self.register
-        else
-            self.quit
+        selection = @@prompt.select("Would you like to login or register?") do |m|
+            m.choice "Login", -> {self.login}
+            m.choice "Register", -> {self.register}
+            m.choice "Quit", -> {Interface.quit}
         end
     end
 
-    def login_success(username)
-        puts "Welcome Back! Happy to see you again, #{username}"
+    def login_success(user)
+        puts "Welcome Back! Happy to see you again, #{user.user_name}"
             #call class method for User class
-            User.display_main_menu
+            User.display_main_menu(user)
     end
 
     def login_failed(user)
@@ -41,7 +39,7 @@ class Interface
 
     def check_pw(user)
         pw = @@prompt.mask("Enter your password:")
-        pw == user.password ? self.login_success(user.user_name) : self.login_failed(user)
+        pw == user.password ? self.login_success(user) : self.login_failed(user)
     end
 
     def login
@@ -62,8 +60,8 @@ class Interface
             self.register
         else
             new_pw = @@prompt.ask("Enter a password:", required: true, modify: :strip)
-            User.create(user_name: new_user_name, password: new_pw)
-            User.display_main_menu
+            new_user = User.create(user_name: new_user_name, password: new_pw)
+            User.display_main_menu(new_user)
         end
     end
 

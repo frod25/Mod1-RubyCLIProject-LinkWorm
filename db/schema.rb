@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(version: 2020_05_24_224649) do
   create_table "links", force: :cascade do |t|
     t.string "url"
     t.string "title"
-    t.string "category" 
+    t.string "category"
     t.string "short_desc"
   end
 
-  create_table "userlinks", force: :cascade do |t|
+  create_table "user_links", force: :cascade do |t|
     t.integer "user_id"
     t.integer "link_id"
     t.boolean "visited"

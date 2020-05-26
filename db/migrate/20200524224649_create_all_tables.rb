@@ -13,7 +13,7 @@ class CreateAllTables < ActiveRecord::Migration[5.2]
       t.string :short_desc
     end
 
-    create_table :userlinks do |t|
+    create_table :user_links do |t|
       t.integer :user_id
       t.integer :link_id
       t.boolean :visited
