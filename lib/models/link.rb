@@ -25,8 +25,9 @@ class Link < ActiveRecord::Base
     end
 
 
-    def self.suggested_links
-        puts "These are the most popular websites!"
+    def self.suggested_links(user)
+        puts " "
+        puts "These are the most popular websites!".colorize(:color => :white, :background => :blue)
         puts "Google.com"
         puts "Youtube.com"
         puts "Reddit.com"
@@ -34,6 +35,7 @@ class Link < ActiveRecord::Base
         puts "Twitter.com"
         puts "news.ycombinator.com"
         puts "Leetcode.com"
+        User.display_main_menu(user)
     end
 
 end

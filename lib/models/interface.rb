@@ -8,7 +8,29 @@ class Interface
     end
 
     def intro
-        puts "Hello, this is our app"
+        puts "Welcome to ... ".colorize(:color => :white, :background => :blue)
+        sleep(0.5)
+        puts "
+        ██╗     ██╗███╗   ██╗██╗  ██╗
+        ██║     ██║████╗  ██║██║ ██╔╝
+        ██║     ██║██╔██╗ ██║█████╔╝ 
+        ██║     ██║██║╚██╗██║██╔═██╗ 
+        ███████╗██║██║ ╚████║██║  ██╗
+        ╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
+        ".light_blue
+        sleep(0.5)
+        puts "
+        ██╗    ██╗ ██████╗ ██████╗ ███╗   ███╗
+        ██║    ██║██╔═══██╗██╔══██╗████╗ ████║
+        ██║ █╗ ██║██║   ██║██████╔╝██╔████╔██║
+        ██║███╗██║██║   ██║██╔══██╗██║╚██╔╝██║
+        ╚███╔███╔╝╚██████╔╝██║  ██║██║ ╚═╝ ██║
+         ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝
+        ".light_blue
+        # .colorize(:color => :blue)
+        sleep(0.5)
+        puts " "
+        puts " "
     end
 
     def self.quit
@@ -19,21 +41,31 @@ class Interface
     end
 
     def login_or_register
-        selection = @@prompt.select("Would you like to login or register?") do |m|
+        selection = @@prompt.select("Would you like to login or register?".colorize(:color => :white, :background => :blue), active_color: :blue) do |m|
             m.choice "Login", -> {self.login}
             m.choice "Register", -> {self.register}
-            m.choice "Quit", -> {Interface.quit}
+            m.choice "Quit".red, -> {Interface.quit}
         end
     end
 
     def login_success(user)
-        puts "Welcome Back! Happy to see you again, #{user.user_name}"
+        puts "
+    ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
+    ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
+    ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  
+    ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  
+    ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
+    ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+                                                              ".light_blue
+        puts "      Happy to see you again, #{user.user_name.capitalize}".colorize(:color => :white, :background => :blue)
+        puts " "
+        puts " "
             #call class method for User class
             User.display_main_menu(user)
     end
 
     def login_failed(user)
-        puts "Wrong password"
+        puts "Wrong password".red
         self.check_pw(user)
     end
 
@@ -47,7 +79,7 @@ class Interface
         if user = User.find_by(user_name: username)
             self.check_pw(user)
         else
-            not_found = @@prompt.select("Username not found..", ["Try Again", "Register"])
+            not_found = @@prompt.select("Username not found..".red, ["Try Again", "Register"])
             not_found == "Try Again" ? self.login : self.register
         end
     
@@ -56,7 +88,7 @@ class Interface
     def register
         new_user_name = @@prompt.ask("Enter a new username:", required: true, modify: :strip)
         if User.find_by(user_name: new_user_name)
-            puts "That username is already taken. Try again"
+            puts "That username is already taken. Try again".red
             self.register
         else
             new_pw = @@prompt.ask("Enter a password:", required: true, modify: :strip)
