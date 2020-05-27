@@ -24,4 +24,16 @@ class Link < ActiveRecord::Base
         # end
     end
 
+
+    def self.suggested_links
+        puts "These are the most popular websites!"
+        puts "Google.com"
+        puts "Youtube.com"
+        puts "Reddit.com"
+        puts "Facebook.com"
+        puts "Twitter.com"
+        puts "news.ycombinator.com"
+        puts "Leetcode.com"
+    end
+
 end
