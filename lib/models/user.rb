@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
          @@prompt.select("Main Menu".colorize(:color => :white, :background => :blue), active_color: :blue) do |m|
             m.choice "Add Link", -> {Link.add_link(user)}
             m.choice "View Links", -> {user.view_links}
-            m.choice "Suggested Links", -> {Link.suggested_links(self)}
+            m.choice "Suggested Links", -> {Link.suggested_links(user)}
             m.choice "Update Link", -> {user.update_link}
             m.choice "Remove Link", -> {user.remove_link}
             m.choice "Exit".red, -> {Interface.quit}
@@ -56,12 +56,18 @@ class User < ActiveRecord::Base
     end
 
     def update_link
+        user_link = nil
         user_link = self.find_userlink_by_url
-        self.choose_update_option(user_link)  
+        if user_link
+            self.choose_update_option(user_link)
+        else
+            return nil
+        end  
     end
     
 
     def find_userlink_by_url
+        link_url = nil
         link_url = @@prompt.ask("Link url:", required: true)
         found_link = self.links.find {|link| link.url == link_url}
         

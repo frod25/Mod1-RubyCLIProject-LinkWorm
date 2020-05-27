@@ -16,12 +16,6 @@ class Link < ActiveRecord::Base
 
         puts "Success!.. Your link was added to the database."
         User.display_main_menu(user)
-        
-        #if its in order of first to last added, we'll want to reverse it
-        # Link.all.limit(5).each do |link|
-        #     puts link.url
-        #     puts link.title
-        # end
     end
 
 
@@ -36,6 +30,7 @@ class Link < ActiveRecord::Base
         puts "news.ycombinator.com"
         puts "Leetcode.com"
         User.display_main_menu(user)
+        return nil
     end
 
 end
