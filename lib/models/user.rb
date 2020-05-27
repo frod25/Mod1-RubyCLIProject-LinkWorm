@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
          @@prompt.select("Main Menu") do |m|
          m.choice "Add Link", -> {Link.add_link(user)}
-         m.choice "Saved Links", -> {user.saved_links}
+         m.choice "View Links", -> {user.view_links}
          m.choice "Suggested Links", -> {user.suggested_links}
          m.choice "Update Link", -> {user.update_link}
          m.choice "Remove Link", -> {user.remove_link}
@@ -17,13 +17,39 @@ class User < ActiveRecord::Base
         end
     end
 
-    def saved_links
+    def view_links
+        @@prompt.select("Options:") do |m|
+            m.choice "Saved Links", -> {self.get_saved_links}
+            m.choice "Favorite Links", -> {self.get_favorite_links}
+            m.choice "Visited Links", -> {self.get_visited_links}
+        end
+    end
+
+    def get_saved_links
         puts "Your saved links are:"
-        self.links.each do |link|
+        self.links.where("url == url").each do |link|
             puts "#{link.title} - #{link.url}"
         end
-        puts "--------"
         User.display_main_menu(self)
+        nil
+    end
+
+    def get_favorite_links
+        puts "YOUR FAVORITE LINKS ARE:"
+        self.links.where('is_favorite == ?', true).each do |link|
+            puts "#{link.title} - #{link.url}"
+        end
+        User.display_main_menu(self)
+        nil
+    end
+
+    def get_visited_links
+        puts "You've visited these links:"
+        self.links.where('visited == ?', true).each do |link|
+            puts "#{link.title} - #{link.url}"
+        end
+        User.display_main_menu(self)
+        nil
     end
 
     def suggested_links
