@@ -36,7 +36,16 @@ class Interface
     def self.quit
         sleep(0.5)
         system("clear")
-        puts "Thanks for using our app, hope to see you again"
+        puts "
+         ██████╗  ██████╗  ██████╗ ██████╗ ██████╗ ██╗   ██╗███████╗
+        ██╔════╝ ██╔═══██╗██╔═══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝██╔════╝
+        ██║  ███╗██║   ██║██║   ██║██║  ██║██████╔╝ ╚████╔╝ █████╗  
+        ██║   ██║██║   ██║██║   ██║██║  ██║██╔══██╗  ╚██╔╝  ██╔══╝  
+        ╚██████╔╝╚██████╔╝╚██████╔╝██████╔╝██████╔╝   ██║   ███████╗
+         ╚═════╝  ╚═════╝  ╚═════╝ ╚═════╝ ╚═════╝    ╚═╝   ╚══════╝".light_blue
+        puts " "
+        puts " "
+        puts "              Thanks for using our app, hope to see you again             ".colorize(:color => :white, :background => :blue)
         system('exit')
     end
 
@@ -57,7 +66,9 @@ class Interface
     ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
     ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
                                                               ".light_blue
-        puts "      Happy to see you again, #{user.user_name.capitalize}".colorize(:color => :white, :background => :blue)
+        puts " "               
+        puts " "
+        puts "                 Happy to see you again, #{user.user_name.capitalize}                    ".colorize(:color => :white, :background => :blue)
         puts " "
         puts " "
             #call class method for User class
