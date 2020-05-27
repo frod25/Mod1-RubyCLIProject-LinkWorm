@@ -1,6 +1,8 @@
 # LinkWorm :bug: :bug:
 
-**LinkWorm** is a CLI app that allows you to save links, view all links you've saved, select favorites and mark the ones you've visited. All links are stored in your own private repository. Built using Ruby and countless Gems. Made with love by [Senada Kadric](https://github.com/senadakadric) and [Felix Rodriguez](https://github.com/frod25).
+**LinkWorm** is a CLI app that allows you to save links, view all links you've saved, select favorites and mark the ones you've visited. All links are stored in your own private repository. Built using Ruby and countless Gems.
+
+Made with :heart: by [Senada Kadric](https://github.com/senadakadric) and [Felix Rodriguez](https://github.com/frod25).
 
 ![How to run](https://i.imgur.com/7FVvIvx.png)
 
@@ -31,7 +33,7 @@
 
 ## Built With
 
-Here are some tools that we used to build LinkWorm:
+Couldn't have done it without these gems:
 
 - [Faker Gem](https://github.com/faker-ruby/faker): generates fake data to seed
 - [TTY::Prompt Gem](https://github.com/piotrmurach/tty-prompt): prompt for command line interface
@@ -39,3 +41,5 @@ Here are some tools that we used to build LinkWorm:
 - [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20): converts text to ASCII art
 
 ### :bug: Thanks for checking out LinkWorm :bug:!
+
+#### comment, like, share, and subscribe!
