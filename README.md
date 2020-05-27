@@ -2,8 +2,6 @@
 
 **LinkWorm** is a CLI app that allows you to save links, view all links you've saved, select favorites and mark the ones you've visited. All links are stored in your own private repository. Built using Ruby and countless Gems.
 
-Made with :heart: by [Senada Kadric](https://github.com/senadakadric) and [Felix Rodriguez](https://github.com/frod25).
-
 ![How to run](https://i.imgur.com/7FVvIvx.png)
 
 ## First things first:
@@ -42,4 +40,4 @@ Couldn't have done it without these gems:
 
 ### :bug: Thanks for checking out LinkWorm :bug:!
 
-#### comment, like, share, and subscribe!
+Made with :heart: by [Senada Kadric](https://github.com/senadakadric) and [Felix Rodriguez](https://github.com/frod25).
