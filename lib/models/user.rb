@@ -3,11 +3,12 @@ class User < ActiveRecord::Base
     has_many :user_links
     has_many :links, through: :user_links
 
-    @@prompt = TTY::Prompt.new
+    @@prompt = TTY::Prompt.new(help_color: :white)
 
     def self.display_main_menu(user)
         puts " "
          @@prompt.select("Main Menu".colorize(:color => :white, :background => :blue), active_color: :blue) do |m|
+            m.enum "."
             m.choice "Add Link", -> {Link.add_link(user)}
             m.choice "View My Links", -> {user.view_links}
             m.choice "Suggested Links", -> {Link.suggested_links(user)}
@@ -21,6 +22,7 @@ class User < ActiveRecord::Base
 
     def view_links
         @@prompt.select("Options:".colorize(:color => :white, :background => :blue), active_color: :blue) do |m|
+            m.enum "."
             m.choice "Saved Links", -> {self.get_saved_links}
             m.choice "Favorite Links", -> {self.get_favorite_links}
             m.choice "Visited Links", -> {self.get_visited_links}

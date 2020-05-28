@@ -3,7 +3,7 @@ class Link < ActiveRecord::Base
     has_many :user_links
     has_many :users, through: :user_links
 
-    @@prompt = TTY::Prompt.new
+    @@prompt = TTY::Prompt.new(help_color: :white)
 
     def self.add_link(user)
         url = @@prompt.ask("What is the URL of your link?", required: true)
@@ -33,7 +33,7 @@ class Link < ActiveRecord::Base
     end
 
     def self.get_public_links
-        self.all.where('is_private == ?', false)
+        self.all.where('is_private == ?', false).reverse
     end
     
     def self.display_public_links(user)

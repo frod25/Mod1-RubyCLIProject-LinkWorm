@@ -1,6 +1,6 @@
 class Interface
 
-    @@prompt = TTY::Prompt.new
+    @@prompt = TTY::Prompt.new(help_color: :white)
 
     def initialize
         self.intro
