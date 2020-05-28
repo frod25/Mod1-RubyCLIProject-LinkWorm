@@ -34,6 +34,7 @@ class Interface
     end
 
     def self.quit
+        self.worm_animation
         sleep(0.5)
         system("clear")
         puts "
@@ -58,6 +59,7 @@ class Interface
     end
 
     def login_success(user)
+        Interface.worm_animation
         system('clear')
         puts "
     ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
@@ -106,6 +108,161 @@ class Interface
             new_pw = @@prompt.ask("Enter a password:", required: true, modify: :strip)
             new_user = User.create(user_name: new_user_name, password: new_pw)
             self.login_success(new_user)
+        end
+    end
+
+    def self.worm_animation
+        frame0 = "                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                            `.-:///--`                                              
+                                       `:shmMMMMMMMMMMNmho:`                                        
+                                     :yNMMMMMMMMMMMMMMMMMMMMd+`                                     
+                                   :dMMMMMMMMMMMMMMMMMMMMMMMMMNs`                                   
+                                 .yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs`                                 
+                                /NMMMMMMMMMMMMNdyyyydmMMMMMMMMMMMMm:                                
+                              .hMMMMMMMMMMMh/.        .+dMMMMMMMMMMMy.                              
+                            `sMMMMMMMMMMMy-              -hMMMMMMMMMMN+`                            
+               `..`      ./yNMMMMMMMMMMd-                  :dMMMMMMMMMMNs:.`                        
+             `yMMMMNNNNNNMMMMMMMMMMMMNo`                     /NMMMMMMMMMMMMNmho-                    
+             /MMMMMMMMMMMMMMMMMMMMMMh.                        `sMMMMMMMMMMMmsMMMh`                  
+             .mMMMMMMMMMMMMMMMMMMNs-                            -yMMMMMMMMMNdMMMM.                  
+              `+hNMMMMMMMMMMMMms:`                                `+hNMMMMMMMMMMs                   
+                  .:/+osyso+:`                                       `-+syyyys/`                    
+                                                                                                    
+                                                                                                    
+        ".light_blue
+
+        frame1 = "                                                                                                    
+                                                                                                            
+                                                                                                    
+                                                                                                    
+                                           `/sddddy+.                                               
+                                         .yMMMMMMMMMMy`                                             
+                                        -NMMMMMMMMMMMMm-                                            
+                                       .mMMMMMMMMMMMMMMN-                                           
+                                       sMMMMMMMMMMMMMMMMd`                                          
+                                      `mMMMMMMMmhMMMMMMMMo                                          
+                                      -MMMMMMMMo`mMMMMMMMm`                                         
+                                      +MMMMMMMM: sMMMMMMMM.                                         
+                                     `dMMMMMMMM  -MMMMMMMMh`                                        
+                        `-:-`       .yMMMMMMMMd  `mMMMMMMMMm+-....`                                 
+                       sMMMMMNdyyyhdMMMMMMMMMM:   /MMMMMMMMMMMMMMMNy`                               
+                      `NMMMMMMMMMMMMMMMMMMMMN/     +MMMMMMMMMMModMMMs                               
+                       /NMMMMMMMMMMMMMMMMMMd-       -hMMMMMMMMMMMMMMs                               
+                        .ohNMMMMMMMMMMMMms-           `+ymNMMMMMMNd+                                
+                            `..----::-.                    .-::-.`                                  
+                                                                                                    
+                                                                                                    
+        ".light_blue
+            
+        frame2 = "
+                                                                                                            
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                            `.-:///--`                                              
+                                       `:shmMMMMMMMMMMNmho:`                                        
+                                     :yNMMMMMMMMMMMMMMMMMMMMd+`                                     
+                                   :dMMMMMMMMMMMMMMMMMMMMMMMMMNs`                                   
+                                 .yMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs`                                 
+                                /NMMMMMMMMMMMMNdyyyydmMMMMMMMMMMMMm:                                
+                              .hMMMMMMMMMMMh/.        .+dMMMMMMMMMMMy.                              
+                            `sMMMMMMMMMMMy-              -hMMMMMMMMMMN+`                            
+               `..`      ./yNMMMMMMMMMMd-                  :dMMMMMMMMMMNs:.`                        
+             `yMMMMNNNNNNMMMMMMMMMMMMNo`                     /NMMMMMMMMMMMMNmho-                    
+             /MMMMMMMMMMMMMMMMMMMMMMh.                        `sMMMMMMMMMMMmsMMMh`                  
+             .mMMMMMMMMMMMMMMMMMMNs-                            -yMMMMMMMMMNdMMMM.                  
+              `+hNMMMMMMMMMMMMms:`                                `+hNMMMMMMMMMMs                   
+                  .:/+osyso+:`                                       `-+syyyys/`                    
+                                                                                                    
+                                                                                                    
+        ".light_blue
+
+        frame3 = "
+                                                                                                            
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                          ``-:/oo++/::.`                                            
+                                    `-+sdmNMMMMMMMMMMMMNmho:`                                       
+                                 .+hNMMMMMMMMMMMMMMMMMMMMMMMMms/.                                   
+                              `+dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho/.`                             
+              .-:/++//:---:/odNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmy+/-.`                      
+           `sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmddhhdNMMMMMMMMMMMMMMMMMMMMMMMNNdy+.                 
+           dMMMMMMMMMMMMMMMMMMMMMMMMMMMNho/-`         `-+ymMMMMMMMMMMMMMMMMMMMhdMMMo                
+           yMMMMMMMMMMMMMMMMMMMMMMMmo:.                    `:sdMMMMMMMMMMMMMMMmmMMMd                
+            /hmNMMMMMMMMMMMMMMNds/.                            `-/sdNMMMMMMMMMMMMMm-                
+                .-:++oooo++/-.                                       -/oshhddhhys:                  
+                                                                                                                                                                                                
+        
+        ".light_blue
+
+        frame4 = "
+        
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+             .:::----...``````````                                ````.--:///:.                     
+           /mMMMMMMMMMMMMMMMMMMMMNNmmmmddhyyyyyyyyyyyyyyhhhhhhhdmNMMMMMMMMMMMMMms`                  
+          .NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh:MMMMm                  
+          .NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM`                 
+           -hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh-                  
+             `-+yhNNNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmdyo/.                    
+                     ``.---:://////++++ooooooosssossooooooooooo++++/:--.`                           
+                                                                                                    
+        
+        ".light_blue
+
+        frame5 = "
+                                                                                                            
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                          ``-:/oo++/::.`                                            
+                                    `-+sdmNMMMMMMMMMMMMNmho:`                                       
+                                 .+hNMMMMMMMMMMMMMMMMMMMMMMMMms/.                                   
+                              `+dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho/.`                             
+              .-:/++//:---:/odNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmy+/-.`                      
+           `sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmddhhdNMMMMMMMMMMMMMMMMMMMMMMMNNdy+.                 
+           dMMMMMMMMMMMMMMMMMMMMMMMMMMMNho/-`         `-+ymMMMMMMMMMMMMMMMMMMMhdMMMo                
+           yMMMMMMMMMMMMMMMMMMMMMMMmo:.                    `:sdMMMMMMMMMMMMMMMmmMMMd                
+            /hmNMMMMMMMMMMMMMMNds/.                            `-/sdNMMMMMMMMMMMMMm-                
+                .-:++oooo++/-.                                       -/oshhddhhys:                  
+                                                                                                   
+        
+        ".light_blue
+
+        animation_array = [frame0, frame1, frame2, frame3, frame4, frame5]
+
+        3.times do
+            i = 1
+            while i < 5
+                animation_array.each do |frame|
+                    puts frame
+                    sleep(0.1)
+                    system("clear")
+                    i += 1
+                end
+                system("clear")
+            end
         end
     end
 
