@@ -58,6 +58,7 @@ class Interface
     end
 
     def login_success(user)
+        system('clear')
         puts "
     ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
     ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
@@ -68,7 +69,7 @@ class Interface
                                                               ".light_blue
         puts " "               
         puts " "
-        puts "                 Happy to see you again, #{user.user_name.capitalize}                    ".colorize(:color => :white, :background => :blue)
+        puts "                 Happy to see you, #{user.user_name.capitalize}                    ".colorize(:color => :white, :background => :blue)
         puts " "
         puts " "
             #call class method for User class
@@ -104,7 +105,7 @@ class Interface
         else
             new_pw = @@prompt.ask("Enter a password:", required: true, modify: :strip)
             new_user = User.create(user_name: new_user_name, password: new_pw)
-            User.display_main_menu(new_user)
+            self.login_success(new_user)
         end
     end
 

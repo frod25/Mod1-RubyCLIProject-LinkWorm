@@ -1,4 +1,4 @@
-# LinkWorm :bug: :bug:
+# LinkWorm :bug:
 
 **LinkWorm** is a CLI app that allows you to save links, view all links you've saved, select favorites and mark the ones you've visited. All links are stored in your own private repository. Built using Ruby and countless Gems.
 
@@ -16,17 +16,20 @@
 
 ## Main Menu
 
-- Add a Link
-  - Enter a new link into your private repository
-- View Links
+:bug: Add a Link
+  - Enter a new link into your private repository or make it public to share with others
+:bug: View Links
   - View all your saved links, favorite links, and links you've visited
-- Suggested Links
+:bug: Suggested Links
   - See popular links from around the web
-- Update Link
+:bug: Public Links
+  - See a list of public links added by other users
+  - Save a link to your private repo
+:bug: Update Link
   - Mark a link as favorite or visited
-- Remove Link
+:bug: Remove Link
   - Delete a link from your private repository
-- Exit
+:sad: Exit
   - We're sad to see you go.
 
 ## Built With
@@ -38,6 +41,6 @@ Couldn't have done it without these gems:
 - [Colorize Gem](https://github.com/fazibear/colorize): enables you to add color to outputted text
 - [Text to ASCII Art Generator](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20): converts text to ASCII art
 
-### :bug: Thanks for checking out LinkWorm :bug:!
+### Thanks for checking out LinkWorm! :bug:
 
 Made with :heart: by [Senada Kadric](https://github.com/senadakadric) and [Felix Rodriguez](https://github.com/frod25).

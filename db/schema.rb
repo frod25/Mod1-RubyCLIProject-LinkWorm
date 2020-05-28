@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_05_24_224649) do
     t.string "title"
     t.string "category"
     t.string "short_desc"
+    t.boolean "is_private"
   end
 
   create_table "user_links", force: :cascade do |t|

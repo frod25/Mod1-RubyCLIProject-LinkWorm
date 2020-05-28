@@ -11,6 +11,7 @@ class CreateAllTables < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :category
       t.string :short_desc
+      t.boolean :is_private
     end
 
     create_table :user_links do |t|
