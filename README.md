@@ -16,20 +16,20 @@
 
 ## Main Menu
 
-- Add a Link :bug:
+- Add a Link  :bug:
   - Enter a new link into your private repository or make it public to share with others
-2. :bug: View Links
+- View Links  :bug:
   - View all your saved links, favorite links, and links you've visited
-3. :bug: Suggested Links
+- Suggested Links  :bug:
   - See popular links from around the web
-4. :bug: Public Links
+- Public Links  :bug:
   - See a list of public links added by other users
   - Save a link to your private repo
-5. :bug: Update Link
+- Update Link  :bug:
   - Mark a link as favorite or visited
-6. :bug: Remove Link
+- Remove Link  :bug:
   - Delete a link from your private repository
-7. :sad: Exit
+- Exit :disappointed:
   - We're sad to see you go.
 
 ## Built With
