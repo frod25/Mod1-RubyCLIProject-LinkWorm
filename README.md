@@ -16,7 +16,7 @@
 
 ## Main Menu
 
-1. :bug: Add a Link
+- Add a Link :bug:
   - Enter a new link into your private repository or make it public to share with others
 2. :bug: View Links
   - View all your saved links, favorite links, and links you've visited
