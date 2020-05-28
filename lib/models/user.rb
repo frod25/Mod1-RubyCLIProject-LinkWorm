@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
     def self.display_main_menu(user)
         puts " "
-         @@prompt.select("Main Menu".colorize(:color => :white, :background => :blue), active_color: :blue) do |m|
+         @@prompt.select("Main Menu".colorize(:color => :white, :background => :blue), active_color: :blue, per_page: 7) do |m|
             m.enum "."
             m.choice "Add Link", -> {Link.add_link(user)}
             m.choice "View My Links", -> {user.view_links}
